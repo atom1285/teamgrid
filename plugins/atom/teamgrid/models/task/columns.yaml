@@ -1,0 +1,35 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        visible: false
+    name:
+        label: Task name
+        searchable: true
+    user_id:
+        label: User
+        searchable: true
+        sortable: true
+        # relation
+    project_id:
+        label: Project
+        searchable: true
+        sortable: true
+        # relation
+    # dates:
+    planned_start:
+        label: Planned start
+        type: date
+    planned_end:
+        label: Planned end
+        type: date
+    planned_time:
+        label: Planned time
+        type: time
+    tracked_time:
+        label: Tracked time
+        type: time

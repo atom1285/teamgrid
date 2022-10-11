@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Project
+
+# Model Form Field configuration
+form: $/atom/teamgrid/models/project/fields.yaml
+
+# Model Class name
+modelClass: Atom\Teamgrid\Models\Project
+
+# Default redirect location
+defaultRedirect: atom/teamgrid/projects
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: atom/teamgrid/projects/update/:id
+    redirectClose: atom/teamgrid/projects
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: atom/teamgrid/projects
+    redirectClose: atom/teamgrid/projects
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

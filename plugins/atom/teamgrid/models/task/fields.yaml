@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    
+    name:
+        label: Task name
+        span: auto
+        type: text
+        placeholder: Enter task name
+        required: true
+    project_id:
+        label: Project
+        placeholder: Select project
+        # relation

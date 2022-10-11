@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Time Entry
+
+# Model Form Field configuration
+form: $/atom/teamgrid/models/timeentry/fields.yaml
+
+# Model Class name
+modelClass: Atom\Teamgrid\Models\TimeEntry
+
+# Default redirect location
+defaultRedirect: atom/teamgrid/timeentries
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: atom/teamgrid/timeentries/update/:id
+    redirectClose: atom/teamgrid/timeentries
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: atom/teamgrid/timeentries
+    redirectClose: atom/teamgrid/timeentries
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

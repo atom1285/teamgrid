@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Task
+
+# Model Form Field configuration
+form: $/atom/teamgrid/models/task/fields.yaml
+
+# Model Class name
+modelClass: Atom\Teamgrid\Models\Task
+
+# Default redirect location
+defaultRedirect: atom/teamgrid/tasks
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: atom/teamgrid/tasks/update/:id
+    redirectClose: atom/teamgrid/tasks
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: atom/teamgrid/tasks
+    redirectClose: atom/teamgrid/tasks
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title
