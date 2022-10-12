@@ -1,0 +1,8 @@
+accounting_people:
+
+  label: Accounting people
+  view:
+    list: $/rainlab/user/models/user/columns.yaml
+    toolbarButtons: add|remove
+  manage:
+    form: $/rainlab/user/models/user/fields.yaml

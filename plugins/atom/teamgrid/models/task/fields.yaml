@@ -9,11 +9,70 @@ fields:
     
     name:
         label: Task name
-        span: auto
         type: text
         placeholder: Enter task name
         required: true
-    project_id:
+    user:
+        label: User
+        placeholder: Select user
+        span: auto
+        type: recordfinder
+        list: ~/plugins/rainlab/user/models/user/columns.yaml
+        recordsPerPage: 10
+        title: Find user
+        prompt: Click the Find button to find a user
+        keyFrom: id
+        nameFrom: name
+        descriptionFrom: email
+        useRelation: true
+        modelClass: RainLab\User\Models\User  
+    project:
         label: Project
         placeholder: Select project
-        # relation
+        span: auto
+        type: recordfinder
+        list: ~/plugins/atom/teamgrid/models/project/columns.yaml
+        recordsPerPage: 10
+        title: Find project
+        prompt: Click the Find button to find a project
+        keyFrom: id
+        nameFrom: name
+        useRelation: true
+        modelClass: Atom\Teamgrid\Models\Project
+
+tabs:
+    fields:
+        #dates tab
+        planned_start:
+            label: Planned start
+            tab: Dates
+            type: datepicker
+            mode: date
+            span: auto
+        planned_end:
+            label: Planned end
+            tab: Dates
+            type: datepicker
+            mode: date
+            span: auto
+        due_date:
+            label: Due date
+            tab: Dates
+            type: datepicker
+            mode: date
+            span: auto
+        #time tab
+        planned_time:
+            label: Planned time
+            tab: Time
+            type: datepicker
+            mode: time
+            span: auto
+        tracked_time:
+            label: Tracked time
+            type: datepicker
+            tab: Time
+            mode: time
+            span: auto
+            disabled: true
+        

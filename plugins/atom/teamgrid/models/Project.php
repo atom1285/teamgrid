@@ -65,7 +65,7 @@ class Project extends Model
 
     public $hasMany = [
         'tasks' => ['Atom\Teamgrid\Models\Task'],
-        'persons' => ['Rainlab\User\Models\User']
+        'accounting_people' => ['Rainlab\User\Models\User'],
     ];
 
     public $hasOneThrough = [];

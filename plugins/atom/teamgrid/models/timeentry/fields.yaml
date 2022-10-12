@@ -6,3 +6,44 @@ fields:
     id:
         label: ID
         disabled: true
+    user:
+        label: User
+        type: recordfinder
+        list: ~/plugins/rainlab/user/models/user/columns.yaml
+        recordsPerPage: 10
+        title: Find user
+        prompt: Click the Find button to find a user
+        keyFrom: id
+        nameFrom: name
+        descriptionFrom: email
+        useRelation: true
+        modelClass: RainLab\User\Models\User
+    task:
+        label: Task
+        type: recordfinder
+        list: ~/plugins/atom/teamgrid/models/task/columns.yaml
+        recordsPerPage: 10
+        title: Find task
+        prompt: Click the Find button to find a task
+        keyFrom: id
+        nameFrom: name
+        useRelation: true
+        modelClass: Atom\Teamgrid\Models\Task
+    start_time:
+        label: Start time
+        type: datepicker
+        mode: time
+        span: auto
+        default: now
+    end_time:
+        label: End time
+        type: datepicker
+        mode: time
+        span: auto
+        default: now
+    total_time:
+        label: Total time
+        type: datepicker
+        mode: time
+        span: auto
+        

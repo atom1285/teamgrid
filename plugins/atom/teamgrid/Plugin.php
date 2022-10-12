@@ -2,6 +2,7 @@
 
 use Backend;
 use System\Classes\PluginBase;
+use Atom\TeamGrid\Classes\Extend\UserExtend;
 
 /**
  * teamgrid Plugin Information File
@@ -40,7 +41,13 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
+        //set timezones
+        now()->setTimezone('Europe/Bratislava');
+        date_default_timezone_set('Europe/Bratislava');
 
+        //extend user model
+        UserExtend::extendUser_AddRelations();
+        UserExtend::extendUser_AddColumns();
     }
 
     /**

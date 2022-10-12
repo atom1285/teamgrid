@@ -6,3 +6,22 @@ columns:
     id:
         label: ID
         searchable: true
+    user:
+        label: User
+        relation: user
+        select: name
+    task:
+        label: Task
+        relation: task
+        select: name
+    start_time:
+        label: Start time
+        type: time
+    end_time:
+        label: End time
+        type: time
+    total_time:
+        label: Total time
+        type: time
+        disabled: true
+

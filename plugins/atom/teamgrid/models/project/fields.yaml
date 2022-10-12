@@ -10,8 +10,12 @@ fields:
     name:
         label: Project name
         type: text
+    description:
+        label: Description
+        type: textarea
     customer:
         label: Customer
+        span: auto
         type: recordfinder
         list: ~/plugins/rainlab/user/models/user/columns.yaml
         recordsPerPage: 10
@@ -23,3 +27,71 @@ fields:
         useRelation: true
         modelClass: RainLab\User\Models\User
         scope: hasCustomerGroup
+    project_manager:
+        label: Project manager
+        span: auto
+        type: recordfinder
+        list: ~/plugins/rainlab/user/models/user/columns.yaml
+        recordsPerPage: 10
+        title: Find project manager
+        prompt: Click the Find button to find a project manager
+        keyFrom: id
+        nameFrom: name
+        descriptionFrom: email
+        useRelation: true
+        modelClass: RainLab\User\Models\User
+        scope: hasProjectManagerGroup
+
+    due_date:
+        label: Due date
+        type: datepicker
+        mode: date
+
+tabs:
+    fields:
+        # accouting tab
+        accounting_type:
+            label: Accounting type
+            tab: Accounting
+            span: auto
+            type: dropdown
+            default: disabled
+            options:
+                disabled: Disabled
+                service_hourly: Service hourly
+                person_hourly: Person hourly
+                hourly: Hourly
+        accounting_rate:
+            label: Accounting rate
+            tab: Accounting
+            span: auto
+            type: number
+            default: 0
+
+        #TODO: make this work(many to many relation)
+        # accounting_people:
+        #     label: Accounting people
+        #     tab: Accounting
+        #     type: partial
+        #     path: $/atom/teamgrid/controllers/projects/_field_accounting_people.htm
+
+        #budget tab
+        budget_type:
+            label: Budget type
+            tab: budget
+            span: auto
+            type: dropdown
+            default: disabled
+            options:
+                disabled: Disabled
+                hours: Hours
+                fees: Fees
+                hours_per_month: Hours per month
+                fees_per_month: Fees per month
+
+        budget_amount:
+            label: Budget amount
+            tab: budget
+            span: auto
+            type: number
+            default: 0

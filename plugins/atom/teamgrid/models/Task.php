@@ -61,10 +61,19 @@ class Task extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
+
+    public $hasMany = [
+        'time_entries' => ['Atom\Teamgrid\Models\TimeEntry']
+    ];
+
     public $hasOneThrough = [];
     public $hasManyThrough = [];
-    public $belongsTo = [];
+
+    public $belongsTo = [
+        'user' => ['RainLab\User\Models\User'],
+        'project' => ['Atom\Teamgrid\Models\Project']
+    ];
+
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

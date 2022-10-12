@@ -6,3 +6,17 @@ columns:
     id:
         label: ID
         searchable: true
+    name:
+        label: Project name
+        searchable: true
+    customer:
+        label: Customer
+        relation: customer
+        select: name
+    project_manager:
+        label: Project manager
+        relation: project_manager
+        select: name
+    due_date:
+        label: Due date
+    

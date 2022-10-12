@@ -14,6 +14,7 @@ class CreateProjectsTable extends Migration
 
             //project details:
             $table->string('name');
+            $table->text('description');
             $table->integer('customer_id')->nullable();
             $table->integer('project_manager_id')->nullable();
             //scheduling:
@@ -21,7 +22,8 @@ class CreateProjectsTable extends Migration
             //accounting:
             $table->enum('accounting_type', ['disabled', 'service_hourly', 'person_hourly', 'hourly']);
             $table->integer('service_id')->nullable();
-            $table->json('person_ids')->nullable(); // ? either do it this way, or change the column to text and make it $jsonable['this_column]...
+            //$table->json('person_ids')->nullable(); // ? either do it this way, or change the column to text and make it $jsonable['this_column]...
+            $table->integer('user_id')->nullable();
             $table->integer('accounting_rate')->nullable();
             //budget:
             $table->enum('budget_type', ['disabled', 'hours', 'fees', 'hours_per_month', 'fees_per_month']);

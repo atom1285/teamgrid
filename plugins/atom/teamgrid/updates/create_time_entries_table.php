@@ -12,11 +12,12 @@ class CreateTimeEntriesTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
 
-            $table->date('start_time');
-            $table->date('end_time');
-
             $table->integer('user_id');
             $table->integer('task_id')->nullable();
+
+            $table->date('start_time');
+            $table->date('end_time')->nullable();
+            $table->date('total_time')->nullable();
 
             $table->timestamps();
         });
