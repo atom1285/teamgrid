@@ -2,7 +2,4 @@
   - create_projects_table.php
   - create_tasks_table.php
   - create_time_entries_table.php
-1.0.2: 
-  - create_projects_table.php
-1.0.3: 
-  - create_projects_table.php
+  - create_project_user_table.php

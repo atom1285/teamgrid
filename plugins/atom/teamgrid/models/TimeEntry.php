@@ -53,6 +53,8 @@ class TimeEntry extends Model
      * @var array Attributes to be cast to Argon (Carbon) instances
      */
     protected $dates = [
+        'start_time',
+        'end_time',
         'created_at',
         'updated_at'
     ];
@@ -76,4 +78,18 @@ class TimeEntry extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+
+
+    public static function afterSave_addUpAllTimeEntriesToTask() {
+        
+        TimeEntry::extend(function($timeEntry) {
+            $timeEntry->bindEvent('model.afterSave', function() {
+                
+                //TODO: update task tracked time here
+    
+            });
+        } );
+
+    }
+
 }

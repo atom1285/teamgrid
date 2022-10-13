@@ -1,6 +1,6 @@
 <?php
 
-namespace Atom\Students\Http\Controllers;
+namespace Atom\Teamgrid\Http\Controllers;
 
 //models:
 
@@ -9,7 +9,7 @@ namespace Atom\Students\Http\Controllers;
 use Rainlab\User\Facades\Auth;
 use LibUser\Userapi\Models\User;
 
-use Atom\Students\Http\Resources\UserResource as Resources;
+use Atom\Teamgrid\Http\Resources\UserResource as Resources;
 
 use Illuminate\Routing\Controller;
 use Carbon\Carbon;

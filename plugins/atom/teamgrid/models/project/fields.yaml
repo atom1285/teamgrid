@@ -67,13 +67,11 @@ tabs:
             span: auto
             type: number
             default: 0
-
-        #TODO: make this work(many to many relation)
-        # accounting_people:
-        #     label: Accounting people
-        #     tab: Accounting
-        #     type: partial
-        #     path: $/atom/teamgrid/controllers/projects/_field_accounting_people.htm
+        accounting_people:
+            label: Accounting people
+            tab: Accounting
+            type: partial
+            path: $/atom/teamgrid/controllers/projects/_field_accounting_people.htm
 
         #budget tab
         budget_type:

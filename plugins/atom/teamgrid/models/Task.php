@@ -53,6 +53,9 @@ class Task extends Model
      * @var array Attributes to be cast to Argon (Carbon) instances
      */
     protected $dates = [
+        'planned_start',
+        'planned_end',
+        'due_date',
         'created_at',
         'updated_at'
     ];

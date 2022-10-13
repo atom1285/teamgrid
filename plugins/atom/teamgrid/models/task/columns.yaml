@@ -27,6 +27,9 @@ columns:
     planned_end:
         label: Planned end
         type: date
+    due_date:
+        label: Due date
+        type: text
     planned_time:
         label: Planned time
         type: time

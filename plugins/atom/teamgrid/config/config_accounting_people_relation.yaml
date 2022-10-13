@@ -6,3 +6,4 @@ accounting_people:
     toolbarButtons: add|remove
   manage:
     form: $/rainlab/user/models/user/fields.yaml
+  table: 

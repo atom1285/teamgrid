@@ -65,7 +65,6 @@ class Project extends Model
 
     public $hasMany = [
         'tasks' => ['Atom\Teamgrid\Models\Task'],
-        'accounting_people' => ['Rainlab\User\Models\User'],
     ];
 
     public $hasOneThrough = [];
@@ -73,10 +72,12 @@ class Project extends Model
 
     public $belongsTo = [
         'project_manager' => ['Rainlab\User\Models\User'], 
-        'customer' => ['Rainlab\User\Models\User']
+        'customer' => ['Rainlab\User\Models\User'],
     ];
     
-    public $belongsToMany = [];
+    public $belongsToMany = [
+        'accounting_people' => ['Rainlab\User\Models\User', 'table' => 'atom_teamgrid_project_user'],
+    ];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];

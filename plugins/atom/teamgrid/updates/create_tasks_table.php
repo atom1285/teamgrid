@@ -10,14 +10,15 @@ class CreateTasksTable extends Migration
     {
         Schema::create('atom_teamgrid_tasks', function (Blueprint $table) {
             $table->engine = 'InnoDB';
+            
             $table->increments('id');
 
             //task details:
             $table->string('name');
 
             //relations:
-            $table->integer('project_id')->nullable();
             $table->integer('user_id')->nullable();
+            $table->integer('project_id')->nullable();
 
             //dates:
             $table->date('planned_start')->nullable();
@@ -27,6 +28,8 @@ class CreateTasksTable extends Migration
             //time:
             $table->time('planned_time')->nullable();
             $table->time('tracked_time')->nullable();
+
+            $table->boolean('done')->default(false);
 
             $table->timestamps();
         });

@@ -12,12 +12,10 @@ class UserExtend{
         
         User::extend(function($model) {
             
-            $model->hasMany['projects'] = ['Atom\Teamgrid\Models\Project'];
+            $model->hasMany['owned_projects'] = ['Atom\Teamgrid\Models\Project'];
             $model->hasMany['tasks'] = ['Atom\Teamgrid\Models\Task'];
             $model->hasMany['time_entries'] = ['Atom\Teamgrid\Models\TimeEntry'];
-
-
-            //TODO: many to many relation to projects
+            $model->hasMany['work_projects'] = ['Atom\Teamgrid\Models\Project', 'table' => 'atom_teamgrid_project_user'];
         });
     }
 
@@ -37,9 +35,19 @@ class UserExtend{
             
             // Add an column
             $listWidget->addColumns([
-                'projects' => [
-                    'label' => 'Projects',
-                    'relation' => 'projects',
+                'groups' => [
+                    'label' => 'Group',
+                    'relation' => 'groups',
+                    'select' => 'name',
+                ],
+                'owned_projects' => [
+                    'label' => 'Owns projects:',
+                    'relation' => 'owned_projects',
+                    'select' => 'name'
+                ],
+                'work_projects' => [
+                    'label' => 'Works on projects:',
+                    'relation' => 'work_projects',
                     'select' => 'name'
                 ],
                 'tasks' => [

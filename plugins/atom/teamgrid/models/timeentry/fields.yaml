@@ -29,21 +29,19 @@ fields:
         nameFrom: name
         useRelation: true
         modelClass: Atom\Teamgrid\Models\Task
+        conditions: done = false
     start_time:
         label: Start time
         type: datepicker
-        mode: time
         span: auto
         default: now
     end_time:
         label: End time
         type: datepicker
-        mode: time
         span: auto
         default: now
     total_time:
         label: Total time
         type: datepicker
-        mode: time
         span: auto
         

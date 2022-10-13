@@ -22,6 +22,6 @@ columns:
         type: time
     total_time:
         label: Total time
-        type: time
+        type: text
         disabled: true
 

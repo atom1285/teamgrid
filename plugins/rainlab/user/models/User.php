@@ -535,6 +535,7 @@ class User extends UserBase
     }
 
     // //! my code:
+    //TODO: move to this an extended class
     public function scopeHasCustomerGroup($query)
     {
 

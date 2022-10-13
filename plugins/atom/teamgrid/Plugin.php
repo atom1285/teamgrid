@@ -4,6 +4,8 @@ use Backend;
 use System\Classes\PluginBase;
 use Atom\TeamGrid\Classes\Extend\UserExtend;
 
+use Atom\Teamgrid\Models\TimeEntry;
+
 /**
  * teamgrid Plugin Information File
  */
@@ -48,6 +50,8 @@ class Plugin extends PluginBase
         //extend user model
         UserExtend::extendUser_AddRelations();
         UserExtend::extendUser_AddColumns();
+
+        TimeEntry::afterSave_addUpAllTimeEntriesToTask();
     }
 
     /**
