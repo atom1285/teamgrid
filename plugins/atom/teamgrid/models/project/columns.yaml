@@ -19,4 +19,6 @@ columns:
         select: name
     due_date:
         label: Due date
+    done:
+        label: Done
     

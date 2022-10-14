@@ -53,7 +53,7 @@ class UserExtend{
                 'tasks' => [
                     'label' => 'Tasks',
                     'relation' => 'tasks',
-                    'select' => 'name'
+                    'select' => 'name',
                 ],
                 'time_entries' => [
                     'label' => 'Time Entries',
@@ -61,6 +61,31 @@ class UserExtend{
                     'select' => 'id'
                     ]
                 ]);
+        });
+    }
+
+    public static function extendUser_addScopes() {
+
+        User::extend(function($model) {
+            
+            $model->addDynamicMethod('scopeHasCustomerGroup', function($query)  { //use ($model)
+
+                return $query->whereHas('groups', function ($query) {
+                    $query->where('name', 'Customers');   
+                });
+            
+            });
+        });
+
+        User::extend(function($model) {
+            
+            $model->addDynamicMethod('scopeHasProjectManagerGroup', function($query)  { //use ($model)
+
+                return $query->whereHas('groups', function ($query) {
+                    $query->where('name', 'Project managers');   
+                });
+            
+            });
         });
     }
 }

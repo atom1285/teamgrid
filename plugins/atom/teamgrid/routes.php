@@ -7,10 +7,20 @@ use Atom\Teamgrid\Http\Controllers\TimeEntryController;
 Route::group(['prefix' => 'api'], function() {
 
 
-    // Route::group(['prefix' => 'projects'], function() {
+    Route::group(['prefix' => 'projects'], function() {
 
+        Route::get('/', [ProjectController::class, 'getAll']);
+        Route::get('/{id}', [ProjectController::class, 'get']);
 
-    // }); 
+        Route::middleware(['auth'])->group(function() {
+
+            Route::post('/create', [ProjectController::class, 'create']);
+            Route::post('/edit/{id}', [ProjectController::class, 'edit']);
+            Route::post('/complete/{id}', [ProjectController::class, 'complete']);
+            Route::delete('/delete/{id}', [ProjectController::class, 'delete']);
+
+        });
+    }); 
 
     Route::group(['prefix' => 'tasks'], function() {
 

@@ -1,0 +1,7 @@
+scopes:
+
+  done:
+    label: Done
+    type: checkbox
+    default: 1
+    conditions: done = false

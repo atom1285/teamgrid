@@ -27,16 +27,6 @@ class Plugin extends PluginBase
     }
 
     /**
-     * Register method, called when the plugin is first registered.
-     *
-     * @return void
-     */
-    public function register()
-    {
-
-    }
-
-    /**
      * Boot method, called right before the request route.
      *
      * @return array
@@ -50,39 +40,7 @@ class Plugin extends PluginBase
         //extend user model
         UserExtend::extendUser_AddRelations();
         UserExtend::extendUser_AddColumns();
-
-        TimeEntry::afterSave_addUpAllTimeEntriesToTask();
-    }
-
-    /**
-     * Registers any front-end components implemented in this plugin.
-     *
-     * @return array
-     */
-    public function registerComponents()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'Atom\Teamgrid\Components\MyComponent' => 'myComponent',
-        ];
-    }
-
-    /**
-     * Registers any back-end permissions used by this plugin.
-     *
-     * @return array
-     */
-    public function registerPermissions()
-    {
-        return []; // Remove this line to activate
-
-        return [
-            'atom.teamgrid.some_permission' => [
-                'tab' => 'teamgrid',
-                'label' => 'Some permission'
-            ],
-        ];
+        UserExtend::extendUser_addScopes();
     }
 
     /**

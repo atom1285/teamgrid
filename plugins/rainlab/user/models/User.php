@@ -533,24 +533,4 @@ class User extends UserBase
     {
         $this->password = $this->password_confirmation = Str::random(static::getMinPasswordLength());
     }
-
-    // //! my code:
-    //TODO: move to this an extended class
-    public function scopeHasCustomerGroup($query)
-    {
-
-        return $query->whereHas('groups', function ($query) {
-            $query->where('name', 'Customers');
-        });
-
-    }
-
-    public function scopeHasProjectManagerGroup($query) {
-            
-            return $query->whereHas('groups', function ($query) {
-                $query->where('name', 'Project managers');
-            });
-    
-    }
-        //$this->addDynamicMethod('scopeHasCustomerGroup', function() {});
 }

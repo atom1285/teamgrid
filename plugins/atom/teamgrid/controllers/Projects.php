@@ -8,7 +8,7 @@ use Backend\Classes\Controller;
  */
 class Projects extends Controller
 {
-    public $relationConfig = '$/atom/teamgrid/config/config_accounting_people_relation.yaml';
+    public $relationConfig = '$/atom/teamgrid/controllers/projects/config_accounting_people_relation.yaml';
     
     /**
      * @var array Behaviors that are implemented by this controller.
