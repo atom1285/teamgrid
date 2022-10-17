@@ -27,7 +27,6 @@ class CreateTasksTable extends Migration
 
             //time:
             $table->time('planned_time')->nullable();
-            $table->time('tracked_time')->nullable();
 
             $table->boolean('done')->default(false);
 

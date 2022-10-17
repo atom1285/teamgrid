@@ -15,11 +15,11 @@ class CreateTimeEntriesTable extends Migration
             $table->integer('user_id')->index();
             $table->integer('task_id')->nullable();
             
-            $table->date('start_time');
-            $table->date('end_time')->nullable();
+            $table->dateTime('start_time');
+            $table->dateTime('end_time')->nullable();
             
             $table->boolean('finished')->default(false);
-            $table->time('total_time')->nullable();
+            $table->integer('total_time')->nullable();
 
             $table->timestamps();
         });

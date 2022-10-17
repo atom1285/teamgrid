@@ -29,7 +29,7 @@ class TimeEntryController extends Controller {
         $entry->task_id = post('task_id');
 
         $entry->start_time = now();
-
+        
         $entry->save();
 
         return Resources::make($entry);
@@ -37,22 +37,18 @@ class TimeEntryController extends Controller {
 
     public function end($id) {
 
-        $entry = TimeEntry::find($id)
+        $entry = TimeEntry::where('id', $id)
         ->where('finished', false)
         ->where('user_id', auth()->user()->id)
         ->firstOrFail();
 
         $start_time = Carbon::create($entry->start_time);
-        $total_time = now()->diff($start_time)->format('%H:%I:%S');
 
         $entry->end_time = now();
-        $entry->total_time = $total_time;
-        $entry->finished = true;
 
         $entry->save();
 
         return Resources::make($entry);
-
     }
 
 }

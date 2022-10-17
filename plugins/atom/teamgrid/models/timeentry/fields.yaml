@@ -39,9 +39,8 @@ fields:
         label: End time
         type: datepicker
         span: auto
-        default: now
     total_time:
-        label: Total time
-        type: datepicker
+        label: Total time in minutes
+        type: number
         span: auto
         

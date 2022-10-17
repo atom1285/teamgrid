@@ -35,4 +35,4 @@ columns:
         type: time
     tracked_time:
         label: Tracked time
-        type: time
+        type: number

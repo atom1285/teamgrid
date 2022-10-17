@@ -23,14 +23,14 @@ class TaskController extends Controller {
 
     public function getAll() {
 
-        $tasks = Task::where('done', false);
+        $tasks = Task::where('done', false)->get();
 
         return Resources::collection($tasks);
     }
 
     public function get($id) {
         
-        $task = Task::find($id)->where('done', false)->firstOrFail();
+        $task = Task::where('id', $id)->where('done', false)->firstOrFail();
 
         return Resources::make($task);
     }
@@ -49,7 +49,6 @@ class TaskController extends Controller {
         $task->due_date = Carbon::create(post('due_date')) ?: null;
         
         $task->planned_time = Carbon::create(post('planned_time')) ?: null;
-        $task->tracked_time = Carbon::create(post('tracked_time')) ?: null;
 
         $task->save();
 
@@ -59,7 +58,7 @@ class TaskController extends Controller {
 
     public function edit($id) {
         
-        $task = Task::find($id)
+        $task = Task::where('id', $id)
         ->where('user_id', auth()->user()->id)
         ->where('done', false)
         ->firstOrFail();
@@ -72,7 +71,6 @@ class TaskController extends Controller {
         $task->due_date = Carbon::create(post('due_date')) ?: $task->due_date;
         
         $task->planned_time = Carbon::create(post('planned_time')) ?: $task->planned_time;
-        $task->tracked_time = Carbon::create(post('tracked_time')) ?: $task->tracked_time;
 
         $task->save();
 
@@ -82,7 +80,7 @@ class TaskController extends Controller {
     
     public function complete($id) {
 
-        $task = Task::find($id)
+        $task = Task::where('id', $id)
         ->where('user_id', auth()->user()->id)
         ->where('done', false)
         ->firstOrFail();
@@ -97,7 +95,7 @@ class TaskController extends Controller {
 
     public function delete($id) {
 
-        $task = Task::find($id)
+        $task = Task::where('id', $id)
         ->where('user_id', auth()->user()->id)
         ->where('done', false)
         ->firstOrFail();

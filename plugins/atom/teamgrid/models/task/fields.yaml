@@ -69,10 +69,10 @@ tabs:
             mode: time
             span: auto
         tracked_time:
-            label: Tracked time
+            label: Tracked time in hours
             type: datepicker
             tab: Time
-            mode: time
+            mode: number
             span: auto
             disabled: true
         

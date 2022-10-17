@@ -20,7 +20,7 @@ columns:
     end_time:
         label: End time
         type: time
-    total_time:
+    total_minutes:
         label: Total time
         type: text
         disabled: true

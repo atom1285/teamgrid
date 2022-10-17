@@ -3,6 +3,7 @@
 namespace Atom\Teamgrid\Http\Resources;
  
 use Illuminate\Http\Resources\Json\JsonResource;
+use Atom\Teamgrid\Models\Task;
  
 class TaskResource extends JsonResource
 {

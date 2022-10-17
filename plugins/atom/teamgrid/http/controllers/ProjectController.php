@@ -42,9 +42,8 @@ class projectController extends Controller {
 
     public function get($id) {
 
+        $project = Project::where('id', $id)->where('done', false)->firstOrFail();
         
-        $project = Project::find($id)->where('done', false)->firstOrFail();
-
         return Resources::make($project);
     }
     
@@ -114,7 +113,7 @@ class projectController extends Controller {
             throw new ApplicationException('You are not a project manager');
         }
 
-        $project = Project::find($id)
+        $project = Project::where('id', $id)
         ->where('done', false)
         ->firstOrFail();
 
@@ -132,7 +131,7 @@ class projectController extends Controller {
             throw new ApplicationException('You are not a project manager');
         }
 
-        $project = Project::find($id)
+        $project = Project::where('id', $id)
         ->where('done', false)
         ->firstOrFail();
 

@@ -28,4 +28,10 @@ class Task extends Model
         'user' => ['RainLab\User\Models\User'],
         'project' => ['Atom\Teamgrid\Models\Project']
     ];
+
+    public function getTrackedTimeAttribute()
+    {
+        return $this->time_entries()->sum('total_time');        
+    }
+
 }
